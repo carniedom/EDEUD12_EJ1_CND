@@ -1,14 +1,11 @@
 @startuml
 left to right direction
 actor :Cliente:
-actor :Restaurante:
-rectangle {
-    usecase "Mostrar menú" as menu
-    usecase "Pedir comida" as pedido
-}
-usecase "Entregar comida" as entrega
-:Cliente: -- menu
-:Cliente: -- pedido
-:Restaurante: -- menu
-:Restaurante: -- entrega
+usecase "Confirmar pedido" as confirmar
+usecase "Cancelar pedido" as cancelar
+usecase "Devolver cambio" as devolver
+:Cliente: -- confirmar
+:Cliente: -- cancelar
+confirmar ..> devolver :<<include>>
+cancelar ..> devolver :<<include>>
 @enduml
