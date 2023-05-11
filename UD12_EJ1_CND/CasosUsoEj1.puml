@@ -1,5 +1,3 @@
 @startuml
-'https://plantuml.com/sequence-diagram
-
-actor :Actor:
+usecase "Mostrar menú"
 @enduml
