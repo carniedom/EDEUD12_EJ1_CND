@@ -1,3 +1,6 @@
 @startuml
-usecase "Mostrar menú"
+left to right direction
+actor :Cliente:
+usecase "Mostrar menú" as menu
+:Cliente: -- menu
 @enduml
