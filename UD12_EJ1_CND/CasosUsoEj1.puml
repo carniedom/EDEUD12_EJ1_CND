@@ -1,6 +1,7 @@
 @startuml
-left to right direction
-usecase "Acceder" as acceso
-usecase "Registrarse" as registro
-acceso <.. registro :<<extend>>
+usecase "Pagar" as pago
+usecase "Pagar con tarjeta" as pagotarjeta
+usecase "Pagar en efectivo" as pagoefectivo
+pago <|-- pagotarjeta
+pago <|-- pagoefectivo
 @enduml
