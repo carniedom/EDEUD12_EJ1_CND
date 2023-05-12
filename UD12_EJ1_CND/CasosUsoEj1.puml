@@ -1,11 +1,6 @@
 @startuml
 left to right direction
-actor :Cliente:
-usecase "Confirmar pedido" as confirmar
-usecase "Cancelar pedido" as cancelar
-usecase "Devolver cambio" as devolver
-:Cliente: -- confirmar
-:Cliente: -- cancelar
-confirmar ..> devolver :<<include>>
-cancelar ..> devolver :<<include>>
+usecase "Acceder" as acceso
+usecase "Registrarse" as registro
+acceso <.. registro :<<extend>>
 @enduml
