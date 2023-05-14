@@ -1,15 +1,18 @@
 @startuml
 left to right direction
-actor :Cliente:
-usecase "Meter dinero" as pago
-usecase "Pedir azucar" as azucar
-usecase "Pedir producto" as pedido
-usecase "Cancelar" as cancelar
-usecase "Devolver dinero" as devolver
-:Cliente: -- pago
-:Cliente: -- azucar
-:Cliente: -- pedido
-:Cliente: -- cancelar
-pedido ..> devolver:<<include>>
-cancelar ..> devolver:<<include>>
+actor :new Actor:
+usecase "Identificarse" as login
+usecase "Pagar" as pago
+usecase "Elegir mensajero" as mensajero
+usecase "Confirmar" as confirmar
+usecase "Registrarse" as registro
+usecase "Pagar con tarjeta" as pagotarjeta
+usecase "Pagar con transferencia" as pagotransferencia
+:new Actor: -- login
+:new Actor: -- pago
+:new Actor: -- mensajero
+:new Actor: -- confirmar
+login <.. registro:<<extend>>
+pago <|-- pagotarjeta
+pago <|--pagotransferencia
 @enduml
