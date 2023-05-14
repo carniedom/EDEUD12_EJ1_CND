@@ -1,18 +1,18 @@
 @startuml
 left to right direction
-actor :new Actor:
-usecase "Identificarse" as login
-usecase "Pagar" as pago
-usecase "Elegir mensajero" as mensajero
-usecase "Confirmar" as confirmar
-usecase "Registrarse" as registro
-usecase "Pagar con tarjeta" as pagotarjeta
-usecase "Pagar con transferencia" as pagotransferencia
-:new Actor: -- login
-:new Actor: -- pago
-:new Actor: -- mensajero
-:new Actor: -- confirmar
-login <.. registro:<<extend>>
-pago <|-- pagotarjeta
-pago <|--pagotransferencia
+actor :Usuario:
+actor :Administrador:
+usecase "Iniciar sesion" as login
+usecase "Recuperar contraseña" as recuperarpwd
+usecase "Modificar contraseña" as modificarpwd
+usecase "Cerrar sesion" as logout
+usecase "Registrar usuario" as registro
+usecase "Instalar programa" as instalar
+:Usuario: -- login
+:Usuario: -- recuperarpwd
+:Usuario: -- modificarpwd
+:Usuario: -- logout
+:Administrador: -- registro
+:Administrador: -- instalar
+:Administrador: -|> :Usuario:
 @enduml
