@@ -1,18 +1,10 @@
 @startuml
 left to right direction
-actor :Usuario:
-actor :Administrador:
-usecase "Iniciar sesion" as login
-usecase "Recuperar contraseña" as recuperarpwd
-usecase "Modificar contraseña" as modificarpwd
-usecase "Cerrar sesion" as logout
-usecase "Registrar usuario" as registro
-usecase "Instalar programa" as instalar
-:Usuario: -- login
-:Usuario: -- recuperarpwd
-:Usuario: -- modificarpwd
-:Usuario: -- logout
-:Administrador: -- registro
-:Administrador: -- instalar
-:Administrador: -|> :Usuario:
+actor :Ciudadano:
+actor :Ciudadano extranjero:
+usecase "Registrar entrada" as registro
+usecase "Tomar huellas" as huellas
+:Ciudadano: -- registro
+:Ciudadano extranjero: -- huellas
+huellas .>registro:<<extend>>
 @enduml
