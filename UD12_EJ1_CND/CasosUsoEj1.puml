@@ -1,7 +1,10 @@
 @startuml
-usecase "Pagar" as pago
-usecase "Pagar con tarjeta" as pagotarjeta
-usecase "Pagar en efectivo" as pagoefectivo
-pago <|-- pagotarjeta
-pago <|-- pagoefectivo
+left to right direction
+actor :Cliente:
+actor :Cliente VIP:
+usecase "Reservar vuelo" as reserva
+usecase "Elegir asiento" as asiento
+:Cliente: -- reserva
+:Cliente VIP: -- asiento
+:Cliente: <|- :Cliente VIP:
 @enduml
