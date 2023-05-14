@@ -1,10 +1,15 @@
 @startuml
 left to right direction
 actor :Cliente:
-actor :Cliente VIP:
-usecase "Reservar vuelo" as reserva
-usecase "Elegir asiento" as asiento
-:Cliente: -- reserva
-:Cliente VIP: -- asiento
-:Cliente: <|- :Cliente VIP:
+usecase "Meter dinero" as pago
+usecase "Pedir azucar" as azucar
+usecase "Pedir producto" as pedido
+usecase "Cancelar" as cancelar
+usecase "Devolver dinero" as devolver
+:Cliente: -- pago
+:Cliente: -- azucar
+:Cliente: -- pedido
+:Cliente: -- cancelar
+pedido ..> devolver:<<include>>
+cancelar ..> devolver:<<include>>
 @enduml
